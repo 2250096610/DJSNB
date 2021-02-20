@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+</head>
+
+<body>
+    <div id="app">
+
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">添加品牌</h3>
+            </div>
+            <div class="panel-body form-inline">
+                <label>
+                    ID:<input type="text" class="form-control" v-model="id"> 
+                </label>
+                <label>
+                    Name:<input type="text" class="form-control" v-model="name" @keyup.enter="tianjia">
+                </label>
+               
+                    <input type="button" value="添加" class="btn btn-primary" @click="tianjia">
+                    <label>
+                        搜索名称关键字:<input type="text" class="form-control" v-model="keywords" v-focus v-color="'yellow'">
+                    </label>
+                    <label>
+                        <h3>{{msg}}</h3>
+                    </label>
+                    <label>
+                        <input type="button" name="" id="" value="点击" @click="dian" class="form-control" />
+                        <input type="button" name="" id="" value="暂停" @click="zan" class="form-control"/>
+                    </label>
+            </div>
+        </div>
+
+
+
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Name</th>
+                    <th>Ctime</th>
+                    <th>Operation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(item, index) in serach(keywords)" :key="item.id ">
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.ctime|dataFormat('')}}</td>
+                    <td><a href="" @click.prevent='deleta'>删除</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+    <!-- <div id='app2'>
+        <h3 v-widtha="50">{{date}}</h3>
+    </div> -->
+</body>
+<script>
+    //全局的过滤器,进行时间的格式化
+    //所谓的全局过滤器,就是所有的vm实例都共享的
+      Vue.filter('dataFormat',function(dataStr,patter){
+        var dt=new Date(dataStr);
+        var y=dt.getFullYear();
+        var m=(dt.getMonth()+1).toString().padStart(2,"0");
+        var d=dt.getDate().toString().padStart(2,"0")
+        if(patter.toLowerCase()==='yyyy-mm-dd'){
+            
+            return `${y}-${m}-${d}`  
+        }else{
+            var h=dt.getHours().toString().padStart(2,"0");
+            var mm=dt.getMinutes().toString().padStart(2,"0");
+            var hm=dt.getSeconds().toString().padStart(2,"0");
+            return `${y}-${m}-${d} ${h}:${mm}:${hm}`  
+        }
+    })
+    //自定义全局案件修饰符 Vue.config.keyCodes.f2=113
+
+    //使用 Vue.directive()定义全局的指令 v-focus
+   
+    //其中:参数1:指令的名称,注意,在定义的时候,指令的名称前面,不需要加v- 前缀
+        //在调用的时候,必须在指令名称前加上 v- 前缀来调用
+            //参数2：是以个对象,这个对象身上, 有一些指令相关的函数,这些函数可以在特定的阶段,执行相关操作
+
+    Vue.directive('focus',{
+        bind:function(){
+        //没当指令绑定在元素上的时候,会立即执行这个bind函数,只执行一次
+        //注意:在每个 函数中,第一个参数,永远是el，表示被执行了指令的那个元素,这个el参数,是一个原生的JS对象
+        //参数2：是一个对象,这个对象身上有一些指令相关的函数,这些函数可以有特定的阶段,执行相关的操作
+        },
+        inserted:function(el){
+        //inserted 表示元素 插入到DOM中的时候,会执行inserted函数【触发一次】
+        el.focus()
+        },
+        updated:function(){
+            //当VNode更新的时候,会执行updated,可能会触发多次
+        }
+    })
+    
+    Vue.directive('color',{
+        bind:function(el,binding){
+            // el.style.color='red'
+            //和样式有关的操作,一般都可以在bind执行
+            // console.log(binding.value);
+            // console.log(binding.expression);
+            el.style.color=binding.value
+        }
+    })
+    new Vue({
+        el: '#app',
+        data: {
+            id:'',
+            name:'',
+            ctime:'',
+            keywords:'',
+            msg:'欢迎来到图书管理',
+			a:null,
+            list: [
+                { id: 1, name: '奔驰', ctime: new Date() },
+                { id: 2, name: '宝马', ctime: new Date() }
+            ]
+        },
+        methods: {
+            tianjia(){
+                this.list.push({id:this.id,name:this.name,ctime:new Date()})
+                this.id=this.name='';
+            },
+            deleta(){
+                this.list.splice(this.id,1);
+            },
+            serach(keywords){ //根据关键字删除
+              var newList=this.list.filter(item=>{
+                  if(item.name.includes(keywords)){
+                      return item;
+                  }
+              })
+              return newList
+            }, 
+            dian(){
+			if(this.a !=null)return;
+			this.a=setInterval(()=>{
+					const str=this.msg.substring(0,1);
+					const sta=this.msg.substring(1);
+					this.msg=sta+str
+			},300);
+			 },
+			 zan(){
+				 clearInterval(this.a);
+				 this.a=null;
+			 }
+
+
+        }
+
+    })
+    
+   
+</script>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+    <link href="../css/cs2.css" type="text/css" rel="stylesheet">
+    
+</head>
+<body>
+<div>
+<div id="bg">
+    <form action="#" method="post">
+        <p>
+            <img src="../images/logo3.png" class="logo"/>
+        </p>
+        <p>
+            <span>账号：</span>
+            <input id="username" type="text"  placeholder="admin" class="num" pattern="^[a-zA-Z][a-zA-Z0-9]{4,11}$"/>
+        </p>
+        <p>
+            <span>密码：</span>
+            <input id="password" type="password"  placeholder="123" class="pass" pattern="^[a-z]\w{5,17}$"/>
+        </p>
+        <p>
+            <input type="button" class="btn01" value="登录" id="btn1"/>
+            <input type="button" class="btn02" value="注册"/>
+        </p>
+    </form>
+</div>
+<div class="go">
+        
+</div>
+    <div class="go2">
+            <a href="../html/index.html">返回首页</a>
+    </div>
+</div>
+    
+
+</body>
+<script>
+    const username=document.getElementById("username");
+    const password=document.getElementById("password");
+    const btn=document.getElementById("btn1");
+    btn.onclick=function(){
+      if(username.value=="admin"&&password.value==123){
+            location.href="../html/index.html";
+      }
+    }
+</script>
+</html>

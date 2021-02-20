@@ -1,0 +1,158 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+
+    background-repeat: no-repeat;
+    
+}
+div{
+    width: 340px;
+    height: 200px;
+    
+}
+#div1{
+    width: 1530px;
+    height: 90px; 
+    overflow: hidden;
+    background: #000000;
+    background-image:url(../images/img.png);
+
+}
+p{
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+}
+
+#div2{
+    text-align: center;
+    font-size: 20px;
+    color: #FFFFFF;
+    width: 80px;
+    height: 30px;
+    
+    cursor: pointer;
+}
+#div3{
+    width: 1519px;
+    height: 120px; 
+    
+    overflow: hidden;
+    background: #000000;
+}
+
+.box1.box2.box3{
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    
+    padding: 0px 10px;
+}
+.box1{
+    float: left;
+    margin-left: 300px;
+    margin-top: 35px;
+}
+.box2{
+    float: left;
+    margin-left: 0px;
+    margin-top: 35px;
+}
+.box3{
+    float: left;
+    margin-left: 0px;
+    margin-top: 35px;
+}
+.box6{
+    float: left;
+    margin-left: 20px;
+    margin-top: 35px;
+}
+.box4{
+    float: left;
+    margin-left: 0px;
+    margin-top: 650px;
+}
+.box5{
+    float: bottom;
+    margin-top: 40px;
+    margin-left: 590px;
+    margin-bottom: 50px
+}
+.box7{
+    float: right;
+    margin-right: 200px;
+    margin-top: 40px;
+}
+.box8{
+    float: top;
+
+    margin-top: 50px;
+}
+ul{
+    list-style: none;
+}
+li{
+    margin: 0 10px;
+    float: left;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 50px;
+    height: 30px;
+}
+li:hover{
+    background-color: #aaaaaa;
+    color: #000000;
+}
+a{
+    text-decoration: none;
+}
+a:link{
+    color: #FFFFFF;
+}
+a:visited{
+    color: #FFFFFF;
+}
+
+a:hover{
+    width: 20px;
+    height: 40px;
+    background: #aaaaaa;
+    color: #000000;
+}
+
+video{
+    min-width: 100%;
+    height: 854px;
+    margin-top: 0px;
+    right: 0px;
+    z-index: -100;
+}
+source{
+    min-width: 100%;
+    height: 854px;
+    height: auto;
+    width: auto;
+}
+.header-video{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: auto;
+}
+.cal_ul >li >a:hover{   
+    background: #ffffff;
+    }
+.clickstyle {
+    background: #4E7CA0;
+    color: #ffffff;
+}
+#s1{
+    float: left;
+    margin-top: 100px;
+    margin-left: 50%;
+    text-decoration: none;
+}

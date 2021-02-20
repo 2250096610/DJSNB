@@ -1,0 +1,53 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-image: url(../images/q4.jpg);
+    
+}
+#bg{
+    width: 450px;
+    height: 350px;
+    float: right;
+    margin-top: 200px;
+    margin-right: 250px;
+    text-align: center;
+    background: #fff;
+    border-radius: 10px 10px;
+    background-color: rgba(255,255,255,0.7)
+
+}
+p{
+    margin: 40px;
+}
+.go{
+    width: 80px;
+    height: 80px;
+    margin-top: 10px;
+    overflow: hidden;
+    background-image: url(../images/go.png);
+}
+.go:hover{
+    cursor: pointer;
+}
+.go2{
+    width: 100px;
+    height: 80px;
+    margin-top: -50px;
+    font-size: 25px;
+    margin-left: 80px;
+}
+a{
+    text-decoration: none;
+}
+a:link {
+    color: #FFFFFF;
+}
+
+a:visited {
+    color: #FFFFFF;
+}

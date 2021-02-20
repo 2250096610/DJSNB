@@ -1,0 +1,180 @@
+body{
+	width: 100%;
+	margin: 0 auto;
+	min-width: 320px;
+	max-width: 640px;
+	font-size: 14px;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	color: #666;
+	line-height: 40px;
+	text-align: center;
+	background-color: #CCCCCC;
+	height: 2000px;
+}
+img{
+	vertical-align: top;
+}
+a{
+	color: #666;
+	text-decoration: none;
+}
+ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.app ul li{
+	background-color: #333333;
+	float: left;
+	height: 45px;
+}
+.app{
+	height: 45px;
+}
+.app ul li:nth-child(1){
+	width: 8%;
+}
+.app ul li:nth-child(1) img{
+	width: 10px;
+	padding: 14px;
+}
+.app ul li:nth-child(2){
+	width: 10%;
+}
+.app ul li:nth-child(2) img{
+	width: 30px;
+	vertical-align: middle;  /* 文字与图片剧中对齐 */
+}
+.app ul li:nth-child(3){
+	width: 57%;
+	color: azure;
+}
+.app ul li:nth-child(4){
+	width: 25%;
+	color: azure;
+	background-color: #f63515;
+}
+
+.serch-dao{
+	height: 45px;
+	position: fixed;
+	overflow: hidden;
+	width: 100%;
+	min-width: 320px;
+	max-width: 640px;
+	
+}
+.serch-a{
+	width: 40px;
+	height: 44px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	
+}
+.serch-a::before{
+	content: "";
+	display: block;
+	width: 20px;
+	height: 18px;
+	background: url(../img/xiazai.png)no-repeat;
+	background-size: 20px 18px;
+	margin-top: 14px;
+	margin-left: 15px;
+}
+.serch{
+	height: 30px;
+	background-color: #FFFFFF;
+	margin: 0 50px;
+	margin-top: 10px;
+	border-radius: 15px;
+	position: relative;
+}
+.jingdong-logo{
+	width: 20px;
+	height: 15px;
+	position: absolute;
+	background-color: pink;
+	top: 8px;
+	left: 13px;
+	background: url(../img/jingdonglogo.png) no-repeat;
+	background-size: 20px 15px;
+}
+.jingdong-logo::after{
+	content:"";
+	position: absolute;
+	right: -10px;
+	top: 0;
+	display: block;
+	width: 1px;
+	height: 15px;
+	background-color: #ccc;
+	
+}
+.sou{
+	background-color: pink;
+	position: absolute;
+	top: 8px;
+	left: 50px;
+	width: 18px;
+	height: 15px;
+	background: url(../img/jd-sprites.png) no-repeat -81px 0;
+	background-size: 200px auto;
+}
+.serch-b{
+	width: 40px;
+	height: 44px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	line-height: 44px;
+	color: #fff;
+}
+.slider img{
+	width: 100%;
+}
+
+.brand div{
+	float: left;
+	width: 33.33%;
+	height: 110px;
+	background-color: #F0FFFF;
+}
+.brand div img{
+	width: 100%;
+}
+nav a{
+	float: left;
+	width: 20%;
+	text-align: center;
+	height: 81px;
+	background-color: #F0FFFF;
+}
+nav a img{
+	width: 40px;
+	margin: 5px 0;
+}
+nav a span{
+	display: block;
+}
+.fen-con  a{
+	width: 50%;
+	float: left;
+	background-color: #F0FFFF;
+}
+.fen-con a h2,h6{
+	height: 24px;
+	width: 100px;
+	margin: 0 5px;
+}
+h2{
+	color: #333333;
+}
+h6{
+	padding: 6px;
+}
+.fen-con a img{
+	width: 66.3px;
+	
+}
